@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — PillPal</title>
+  <link rel="stylesheet" href="cssstyle.css">
+  <style>
+    body {
+      background-color: #f3a6c1; /* dark pink page background */
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      color: #0f172a;
+    }
+
+    /* Header */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* title left, nav right */
+      padding: 0.8rem 1rem;
+      background-color: #8b5cf6; /* purple header */
+      color: #fff;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 2rem;
+    }
+
+    /* Navigation links */
+    .header-nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      background-color: #fff; /* white background on hover */
+      color: #8b5cf6; /* purple text on hover */
+    }
+
+    /* Dashboard container */
+    .container.dashboard {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .card {
+      background-color: #fff0f7; /* lighter pink card */
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(2,6,23,0.05);
+    }
+
+    h2#welcome {
+      text-align: center;
+      color: #8b5cf6;
+    }
+
+    h3 {
+      color: #8b5cf6;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <strong class="brand">Pill Pal</strong>
+    <nav class="header-nav">
+      <a href="home.html" class="active">Home</a>
+    
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container dashboard">
+    <h2 id="welcome">Welcome, <span id="userName">User</span></h2>
+
+    <section class="card">
+      <h3>Upcoming Appointments</h3>
+      <ul id="appointments">
+        <li>Dental checkup — Dec 2, 2025 — 10:00 AM</li>
+        <li>GP review — Jan 15, 2026 — 2:00 PM</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>Prescriptions</h3>
+      <ul id="prescriptions">
+        <li>Metformin — 500mg — 2 times daily — Next refill: Dec 10, 2025</li>
+        <li>Atorvastatin — 20mg — 1 time nightly — Next refill: Jan 5, 2026</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>Notifications</h3>
+      <ul id="notifications">
+        <li>Reminder: Take Metformin at 1:00 PM.</li>
+        <li>Refill due for Atorvastatin in 5 days.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PillPal — Medication Reminders</title>
+  <link rel="stylesheet" href="cssstyle.css">
+  
+</head>
+<body>
+  <!-- Header with right title -->
+  <header class="app-header" role="banner">
+    <div class="left">
+      <button class="icon-btn" aria-label="Open menu" id="menuBtn">☰</button>
+    </div>
+    <strong class="brand">Pill Pal</strong>
+    <b><header><Pill Pal></b></header>
+    <div class="right">
+     <a href="register.html" class="btn primary">Get started</a>
+
+      <a href="login.html" class="btn outline">Sign in</a>
+    </div>
+  </header>
+ 
+
+
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <h1>Never miss a dose!</h1>
+      <p class="lead">Simple mobile-first medication reminders, prescriptions, and quick actions.</p>
+
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <div class="icon">💊</div>
+        <h3>Reminders</h3>
+        <p>Schedule doses and snooze reminders.</p>
+      </article>
+      <article class="feature">
+        <div class="icon">📅</div>
+        <h3>Appointments</h3>
+        <p>Track upcoming doctor visits.</p>
+      </article>
+      <article class="feature">
+        <div class="icon">🔔</div>
+        <h3>Refills</h3>
+        <p>Get alerts when refills are due.</p>
+      </article>
+    </section>
+    <!-- Calendar Section -->
+<section class="feature">
+  <h2>Appointment Calendar</h2>
+  <div id="calendar"></div>
+</section>
+
+<style>
+  /* Purple-themed calendar */
+  #calendar {
+    width: 100%;
+    max-width: 700px;
+    margin: 1rem auto;
+    border: 1px solid #a78bfa; /* light purple border */
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #f3e8ff; /* very light purple background */
+  }
+  #calendar table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #calendar th, #calendar td {
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #c4b5fd; /* slightly darker purple */
+  }
+  #calendar th {
+    background-color: #8b5cf6; /* dark purple header */
+    color: #fff;
+  }
+  #calendar td.today {
+    background-color: #7c3aed; /* vibrant purple for today */
+    color: #fff;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  // Simple calendar rendering for current month
+  function renderCalendar() {
+    const calendarDiv = document.getElementById('calendar');
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const today = date.getDate();
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    let html = '<table><tr>';
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    for (let d of days) html += `<th>${d}</th>`;
+    html += '</tr><tr>';
+
+    // Empty cells before first day
+    for(let i=0;i<firstDay;i++) html += '<td></td>';
+
+    // Fill the dates
+    for(let day=1; day<=lastDate; day++){
+      let cls = (day===today) ? 'today' : '';
+      html += `<td class="${cls}">${day}</td>`;
+      if((day+firstDay)%7===0) html += '</tr><tr>';
+    }
+
+    html += '</tr></table>';
+    calendarDiv.innerHTML = html;
+  }
+
+  renderCalendar();
+</script>
+
+
+    <section class="mockup">
+      <div class="phone">
+        <div class="phone-top">Today</div>
+        <ul class="reminder-list">
+          <li><span class="time">08:00</span><strong>Vitamin D</strong><span class="meta">1 tab</span></li>
+          <li><span class="time">13:00</span><strong>Metformin</strong><span class="meta">2 tabs</span></li>
+          <li><span class="time">21:00</span><strong>Atorvastatin</strong><span class="meta">1 cap</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PillPal — Medication Tracker</title>
+  <link rel="stylesheet" href="cssstyle.css">
+  <style>
+    /* Light pink page background */
+    body {
+      background-color:  #f3a6c1;;
+;
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      color: #0f172a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #f472b6;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #374151;
+    }
+
+    .feature {
+      background-color: #fff0f7;
+      border-left: 5px solid #f472b6;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(2,6,23,0.05);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #f9a8d4;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #f472b6;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <main class="container">
+    <h1>Stay in Control of Your Medications</h1>
+    <p>Our medication tracker app acts as your digital assistant, keeping you on top of your supply. PillPal will remind you in advance when it's time for a refill or a new prescription.</p>
+
+    <div class="feature">
+      <h2>Reliable Medication Reminders</h2>
+      <p>Get notified of every intake, including tablets, pills, and other medications. Track measurements, doctor’s appointments, or symptom checks automatically.</p>
+    </div>
+
+    <div class="feature">
+      <h2>Track Appointments & Therapy</h2>
+      <p>Never miss a doctor’s visit or therapy session. PillPal helps you manage your schedule and ensures your therapy stays on track.</p>
+    </div>
+
+    <div class="feature">
+      <h2>Focus on What Matters</h2>
+      <p>The app keeps an eye on your medications and therapy for you, so you can focus on other important things in your life without worry.</p>
+    </div>
+
+    <a href="register.html" class="btn">Get Started with PillPal</a>
+  </main>
+
+ 
+
+</body>
+</html>
+
+
+  
+
+  <script src="main.js"></script>
+</body>
+</html>

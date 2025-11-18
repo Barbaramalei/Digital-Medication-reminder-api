@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pill Pal — Log Out</title>
+  <link rel="stylesheet" href="cssstyle.css">
+  <style>
+    body {
+      background-color: # f3a6c1; /* slightly darker pink */
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(180deg,#fff,#f7fafd);
+      border-bottom: 1px solid #e6eef0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .app-header .brand {
+      font-weight: 900;
+      font-size: 2rem;
+      color: #8b5cf6; /* purple accent */
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Container */
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #8b5cf6;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #374151;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #f9a8d4;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #f472b6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="left"></div>
+    <strong class="brand">PillPal</strong>
+    <div class="right"></div>
+  </header>
+
+  <main class="container">
+    <h1>Logged Out</h1>
+    <p>You have successfully logged out of your PillPal account. Stay on top of your medications by signing in again whenever needed.</p>
+    <a href="login.html" class="btn">Sign In Again</a>
+  </main>
+
+</body>
+</html>

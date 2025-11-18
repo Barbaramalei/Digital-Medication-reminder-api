@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign in — Pill Pal</title>
+  <link rel="stylesheet" href="cssstyle.css">
+  <style>
+    body {
+      background-color: #f3a6c1; /* slightly darker pink */
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      color: #0f172a;
+    }
+
+    /* Header */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* nav left, title right */
+      padding: 0.8rem 1rem;
+      background: linear-gradient(180deg,#fff,#f7fafd);
+      border-bottom: 1px solid #e6eef0;
+    }
+
+    /* Brand title */
+    .brand {
+      font-weight: 900;
+      font-size: 2rem;
+      color: #8b5cf6; /* purple */
+    }
+
+    /* Navigation links */
+    .header-nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: #8b5cf6; /* purple */
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      background-color: #8b5cf6; /* dark purple background */
+      color: #fff; /* white text on hover */
+    }
+
+    /* Main container */
+    .container.narrow {
+      max-width: 420px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    /* Form styling */
+    form label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: 1px solid #e6eef0;
+      margin-top: 0.3rem;
+    }
+
+    .btn.primary {
+      margin-top: 1.2rem;
+      background-color: #f472b6; /* dark pink button */
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn.primary:hover {
+      background-color: #b0005a; /* darker pink on hover */
+    }
+
+    .muted {
+      color: #6b7280;
+      margin-top: 0.6rem;
+    }
+
+    .message {
+      margin-top: 0.6rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <nav class="header-nav">
+      <div nav>
+      <a href="home.html" class="active">Home</a>
+      <a href="register.html">Register</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+    <strong class="brand">Pill Pal</strong>
+  </header>
+
+  <main id="main" tabindex="-1" class="container narrow">
+    <h1>Sign in</h1>
+    <p class="lead">Welcome back — access your reminders and prescriptions.</p>
+
+    <form id="loginForm" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password">
+
+      <button class="btn primary" type="submit">Sign in</button>
+      <p class="muted">No account? <a href="register.html">Create one</a></p>
+      <div id="loginMessage" role="status" aria-live="polite" class="message"></div>
+    </form>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
